@@ -63,8 +63,9 @@ testUseMixtuning();
 **Step 3**: Use a mixtuning via api request:
 
 ```typescript api request
-const response = await axios.post('https://moai-service-app.humiris.ai/api/api-key-operators/use-mixtuning
-', payload, {
+const response = await axios.post(
+'https://moai-service-app.humiris.ai/api/api-key-operators/use-mixtuning',
+payload, {
   headers: {
     "moai-api-key": this.apiKey,
     "Content-Type": "application/json",
@@ -73,7 +74,7 @@ const response = await axios.post('https://moai-service-app.humiris.ai/api/api-k
 return response;
 ```
 
-\####Payload
+###Payload
 
 ```typescript api url
 const payload = {
