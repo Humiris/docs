@@ -17,10 +17,9 @@ Follow these steps to install and run Humiris on your operating system:
   npm install humiris-ai
   ```
 
-```bash yarn
-yarn add humiris-ai
-```
-
+  ```bash yarn
+  yarn add humiris-ai
+  ```
 </CodeGroup>
 
 <Info>
@@ -63,12 +62,9 @@ testUseMixtuning();
 
 **Step 3**: Use a mixtuning via api request:
 
-```typescript api url
-http://moai-service-app.humiris.ai/api/api-key-operators/use-mixtuning
-```
-
 ```typescript api request
-const response = await axios.post(this.apiUrl, payload, {
+const response = await axios.post('https://moai-service-app.humiris.ai/api/api-key-operators/use-mixtuning
+', payload, {
   headers: {
     "moai-api-key": this.apiKey,
     "Content-Type": "application/json",
@@ -77,7 +73,7 @@ const response = await axios.post(this.apiUrl, payload, {
 return response;
 ```
 
-####Payload
+\####Payload
 
 ```typescript api url
 const payload = {
@@ -90,14 +86,14 @@ const payload = {
 };
 ```
 
-- **mixTuningId**: you can find it on the platform, in your mixtuning list.
+* **mixTuningId**: you can find it on the platform, in your mixtuning list.
 
-- **prompt**: add you prompt here.
+* **prompt**: add you prompt here.
 
-- **systemInstruction**: add the system instruction here.
+* **systemInstruction**: add the system instruction here.
 
-- **mixInstruction**: add your mix instruction here.
+* **mixInstruction**: add your mix instruction here.
 
-- **temperature**: must be an integer
+* **temperature**: must be an integer
 
-- **maxTokens**: must be an integer
+* **maxTokens**: must be an integer
