@@ -27,6 +27,34 @@ Follow these steps to install and run Humiris on your operating system:
 
 **Step 2**: Navigate to the docs directory (where the `mint.json` file is located) and execute the following command:
 
+<CodeGroup>
+import MoAi from 'humiris-ai';
+
+const apiKey = 'sk-FftD1nLgo8eLxzyKYn1pJunnVt5Bc5La';
+const moai = new MoAi(apiKey);
+
+const payload = {
+  mixTuningId: 'cm3eudn2t0008mea4s5zp4fc1',
+  prompt: 'What is the weather today?',
+  systemInstruction: 'Please provide a concise answer.',
+  mixInstruction: 'Use a casual tone.',
+  temperature: 10,
+  maxTokens: 100
+};
+
+async function testUseMixtuning() {
+  try {
+    const response = await moai.useMixtuning(payload);
+    console.log('Response:', response.data);
+  } catch (error) {
+    console.error('Error:', (error as Error)?.message ?? 'Unknown error');
+  }
+}
+
+testUseMixtuning();
+
+</CodeGroup>
+
 ```bash
 mintlify dev
 ```
