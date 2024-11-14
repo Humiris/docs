@@ -128,6 +128,38 @@
           }
         }
       }
+    },
+    "/api/api-key-operators/use-mixtuning": {
+      "post": {
+        "operationId": "ApiKeyOperatorController_useMixTuningDto",
+        "summary": "Use a mixtuning",
+        "parameters": [
+          {
+            "name": "moai-api-key",
+            "in": "header",
+            "description": "API Key for accessing this endpoint",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/useMixTuningDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Ok"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -183,12 +215,46 @@
             "type": "string"
           }
         }
+      },
+      "useMixTuningDto": {
+        "type": "object",
+        "properties": {
+          "mixTuningId": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "systemInstruction": {
+            "type": "string"
+          },
+          "mixInstruction": {
+            "type": "string"
+          },
+          "temperature": {
+            "type": "number"
+          },
+          "maxTokens": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "mixTuningId",
+          "prompt",
+          "systemInstruction",
+          "mixInstruction",
+          "temperature",
+          "maxTokens"
+        ]
       }
     },
     "securitySchemes": {
       "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
+        "bearer": {
+          "scheme": "bearer",
+          "bearerFormat": "JWT",
+          "type": "http"
+        }
       }
     }
   }
