@@ -1,73 +1,90 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Development"
+description: "How to integrate MoAi in your project"
 ---
 
 <Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding.
+  **Prerequisite**: Please install Node.js (version 19 or higher) before
+  proceeding.
 </Info>
 
 Follow these steps to install and run Humiris on your operating system:
 
-**Step 1**: Install Mintlify:
+**Step 1**: Install Humiris:
 
 <CodeGroup>
   ```bash npm
   npm install humiris-ai
   ```
 
-  ```bash yarn
-  yarn add humiris-ai
-  ```
+```bash yarn
+yarn add humiris-ai
+```
+
 </CodeGroup>
 
 <Info>
-  **Prerequisite**: At this step you will need your Moai Apikey to continue. <a href="https://docs.humiris.ai/quickstart">How to get my Moai Apikey</a> ?
+  **Prerequisite**: At this step you will need your Moai Apikey to continue.{" "}
+  <a href="https://docs.humiris.ai/quickstart">How to get my Moai Apikey</a> ?
 </Info>
 
-**Step 2**: Navigate to the docs directory (where the `mint.json` file is located) and execute the following command:
+**Step 2**: Use a mixtuning:
+
+After creating your API key, you'll need to add your cloud provider API keys to our platform as indicated [here](https://docs.humiris.ai/quickstart).
+
+Once you've done that, you'll be able to perform your mixtuning after completing the necessary action in the mixtuning sction on the platform.
 
 ```typescript Typescript exemple
-  import MoAi from 'humiris-ai';
-  
-  const apiKey = 'sk-FftD1nLgo8eLxzyKYn1pJunnVt5Bc5La';
-  const moai = new MoAi(apiKey);
-  
-  const payload = {
-    mixTuningId: 'cm3eudn2t0008mea4s5zp4fc1',
-    prompt: 'What is the weather today?',
-    systemInstruction: 'Please provide a concise answer.',
-    mixInstruction: 'Use a casual tone.',
-    temperature: 10,
-    maxTokens: 100
-  };
-  
-  async function testUseMixtuning() {
-    try {
-      const response = await moai.useMixtuning(payload);
-      console.log('Response:', response.data);
-    } catch (error) {
-      console.error('Error:', (error as Error)?.message ?? 'Unknown error');
-    }
+import MoAi from "humiris-ai";
+
+const apiKey = "your_moai_apikey";
+const moai = new MoAi(apiKey);
+
+const payload = {
+  mixTuningId: "your_mix_tuning_id",
+  prompt: "What is the weather today?",
+  systemInstruction: "Please provide a concise answer.",
+  mixInstruction: "Cost optimization.",
+  temperature: 10,
+  maxTokens: 100,
+};
+
+async function testUseMixtuning() {
+  try {
+    const response = await moai.useMixtuning(payload);
+    console.log("Response:", response.data);
+  } catch (error) {
+    console.error("Error:", (error as Error)?.message ?? "Unknown error");
   }
-  
-  testUseMixtuning();
+}
 
+testUseMixtuning();
 ```
 
-```bash
-mintlify dev
+#### The payload
+
+```typescript
+const payload = {
+  mixTuningId: "your_mix_tuning_id",
+  prompt: "What is the weather today?",
+  systemInstruction: "Please provide a concise answer.",
+  mixInstruction: "Cost optimization.",
+  temperature: 10,
+  maxTokens: 100,
+};
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+- mixTuningId: you can find it on the platform, in your mixtuning list.
 
-### Custom Ports
+- prompt: add you prompt here.
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+- systemInstruction: add the system instruction here.
 
-```bash
-mintlify dev --port 3333
-```
+- mixInstruction: add your mix instruction here.
+
+- temperature: must be an integer
+
+- maxTokens: must be an integer
 
 If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
 
@@ -84,9 +101,10 @@ Please note that each CLI release is associated with a specific version of Mintl
   npm i -g mintlify@latest
   ```
 
-  ```bash yarn
-  yarn global upgrade mintlify
-  ```
+```bash yarn
+yarn global upgrade mintlify
+```
+
 </CodeGroup>
 
 ## Validating Links
@@ -100,14 +118,14 @@ mintlify broken-links
 ## Deployment
 
 <Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
+  Unlimited editors available under the [Pro Plan](https://mintlify.com/pricing)
+  and above.
 </Tip>
 
 If the deployment is successful, you should see the following:
 
 <Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
+  <img src="/images/checks-passed.png" style={{ borderRadius: "0.5rem" }} />
 </Frame>
 
 ## Code Formatting
@@ -125,6 +143,7 @@ We suggest using extensions on your IDE to recognize and format MDX. If you're a
     2. Upgrade to Node v19 or higher.
 
     3. Reinstall mintlify: `npm install -g mintlify`
+
   </Accordion>
 
   <Accordion title="Issue: Encountering an unknown error">
