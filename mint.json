@@ -1,5 +1,4 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Humiris Docs",
   "logo": {
     "dark": "/logo/250x250.svg",
