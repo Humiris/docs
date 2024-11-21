@@ -1,10 +1,10 @@
 {
   "name": "Humiris Docs",
   "logo": {
-    "dark": "/logo/250x250.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/logo.png",
+    "light": "/logo/logo.png"
   },
-  "favicon": "/logo/favicon-16x16.png",
+  "favicon": "/logo/favicon.jpg",
   "colors": {
     "primary": "#540ff1",
     "light": "#142abc",
