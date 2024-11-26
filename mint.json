@@ -2,7 +2,7 @@
   "name": "Humiris Docs",
   "logo": {
     "dark": "/logo/logo.png",
-    "light": "/logo/logo2.png"
+    "light": "/logo/light.png"
   },
   "favicon": "/logo/favicon.jpg",
   "colors": {
