@@ -17,9 +17,10 @@ Follow these steps to install and run Humiris on your operating system:
   npm install humiris-ai
   ```
 
-  ```bash yarn
-  yarn add humiris-ai
-  ```
+```bash yarn
+yarn add humiris-ai
+```
+
 </CodeGroup>
 
 <Info>
@@ -41,9 +42,18 @@ const moai = new MoAi(apiKey);
 
 const payload = {
   mixTuningId: "your_mix_tuning_id",
-  prompt: "What is the weather today?",
-  systemInstruction: "Please provide a concise answer.",
-  mixInstruction: "Cost optimization.",
+  messages: [
+    {
+      role: "system",
+      content:
+        "You are a helpful assistant that answers questions about technology.",
+    },
+    {
+      role: "user",
+      content:
+        "What is the diference between a microprocessor and a central processing unit?",
+    },
+  ],
   temperature: 10,
   maxTokens: 100,
 };
@@ -64,13 +74,15 @@ testUseMixtuning();
 
 ```typescript api request
 const response = await axios.post(
-'https://moai-service-app.humiris.ai/api/api-key-operators/use-mixtuning',
-payload, {
-  headers: {
-    "moai-api-key": this.apiKey,
-    "Content-Type": "application/json",
-  },
-});
+  "https://moai-service-app.humiris.ai/api/api-key-operators/use-mixtuning",
+  payload,
+  {
+    headers: {
+      "moai-api-key": this.apiKey,
+      "Content-Type": "application/json",
+    },
+  }
+);
 return response;
 ```
 
@@ -79,22 +91,27 @@ return response;
 ```typescript api url
 const payload = {
   mixTuningId: "your_mix_tuning_id",
-  prompt: "What is the weather today?",
-  systemInstruction: "Please provide a concise answer.",
-  mixInstruction: "Cost optimization.",
+  messages: [
+    {
+      role: "system",
+      content:
+        "You are a helpful assistant that answers questions about technology.",
+    },
+    {
+      role: "user",
+      content:
+        "What is the diference between a microprocessor and a central processing unit?",
+    },
+  ],
   temperature: 10,
   maxTokens: 100,
 };
 ```
 
-* **mixTuningId**: you can find it on the platform, in your mixtuning list.
+- **mixTuningId**: you can find it on the platform, in your mixtuning list.
 
-* **prompt**: add you prompt here.
+- **messages**: add your message here .
 
-* **systemInstruction**: add the system instruction here.
+- **temperature**: must be an integer
 
-* **mixInstruction**: add your mix instruction here.
-
-* **temperature**: must be an integer
-
-* **maxTokens**: must be an integer
+- **maxTokens**: must be an integer
