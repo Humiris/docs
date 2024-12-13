@@ -1,0 +1,109 @@
+---
+title: "Node.js"
+description: "Humiris AI is a library that allows developers to seamlessly integrate Mixture of AI Basic and Advanced into their applications. This library is designed to simplify the process of adding Mixture of AI features and functionalities, making it accessible for developers of all levels"
+---
+
+<Info>
+  **Prerequisite**: Please install Node.js (version 19 or higher) before
+  proceeding.
+</Info>
+
+**Install Humiris**
+Open your terminal or command prompt and run the following command:
+
+<CodeGroup>
+  ```bash npm
+  npm install humiris-ai
+  ```
+
+```bash yarn
+yarn add humiris-ai
+```
+
+</CodeGroup>
+
+<Info>
+  **Prerequisite**: At this step you will need your Moai Apikey to continue.{" "}
+  <a href="https://docs.humiris.ai/quickstart">How to get my Moai Apikey</a> ?
+</Info>
+
+**Importing the Library**
+
+After installation, you can import the Humiris library into your project:
+
+```python
+import { BasicMoAi, AdvancedMoAi } from 'humiris-ai';
+```
+
+**Basic Usage**
+
+```typescript
+import { BasicMoAi } from "humiris-ai";
+
+const moai = new BasicMoAi("your_api_key");
+
+const payload = {
+  mixTuningId: "exampleId",
+  messages: [
+    {
+      role: "system",
+      content:
+        "You are a helpful assistant that answers questions about technology.",
+    },
+    {
+      role: "user",
+      content:
+        "What is the diference between a microprocessor and a central processing unit?",
+    },
+  ],
+  temperature: 0.7,
+  maxTokens: 150,
+};
+
+moai
+  .useBasicMixtuning(payload)
+  .then((response) => {
+    console.log("Response from AI:", response);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+```
+
+**Advanced Usage**
+
+```typescript
+import { AdvancedMoAi } from "humiris-ai";
+
+const advancedMoai = new AdvancedMoAi("your_api_key");
+
+const advancedPayload = {
+  mixTuningId: "advancedExampleId",
+  messages: [
+    {
+      role: "system",
+      content:
+        "You are a helpful assistant that answers questions about technology.",
+    },
+    {
+      role: "user",
+      content:
+        "What is the diference between a microprocessor and a central processing unit?",
+    },
+  ],
+  temperature: 0.9,
+  maxTokens: 250,
+};
+
+advancedMoai
+  .useAdvancedMixtuning(advancedPayload)
+  .then((response) => {
+    console.log("Advanced response from AI:", response);
+  })
+  .catch((error) => {
+    console.error("Advanced error:", error);
+  });
+```
+
+**Support**
+For any questions or issues, please contact Hilario Houmey at h.hilario@humiris.ai.

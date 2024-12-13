@@ -1,0 +1,85 @@
+---
+title: "Python"
+description: "Humiris AI is a library that allows developers to seamlessly integrate Mixture of AI Basic and Advanced into their applications. This library is designed to simplify the process of adding Mixture of AI features and functionalities, making it accessible for developers of all levels."
+---
+
+<Info>
+  **Prerequisite**: To install the Humiris AI library, you can use pip, the
+  Python package manager. Ensure you have Python 3.6 or later installed on your
+  system.
+</Info>
+
+**Install Humiris**
+Open your terminal or command prompt and run the following command:
+
+```bash pip
+pip install humiris-ai
+```
+
+<Info>
+  **Prerequisite**: At this step you will need your Mixture Apikey to continue.{" "}
+  <a href="https://docs.humiris.ai/quickstart">How to get my Moai Apikey</a> ?
+</Info>
+
+**Importing the Library**
+
+After installation, you can import the Humiris library into your Python project:
+
+```python
+import humiris-ai
+```
+
+**Basic Usage**
+
+```python
+from humiris-ai import BasicMoAi, MessageType, BasicPayload
+
+# Initialize the MoAi with your API key
+moai = BasicMoAi(api_key='your_api_key')
+
+# Create a payload for the AI service
+messages = [
+    MessageType(role='system', content='You are a helpful assistant that answers questions about technology.'),
+    MessageType(role='user', content='What is the diference between a microprocessor and a central processing unit?')
+]
+
+payload = BasicPayload(
+    mix_tuning_id='exampleId',
+    messages=messages,
+    temperature=0.7,
+    max_tokens=150
+)
+
+# Call the AI service
+response = moai.use_basic_mixtuning(payload)
+print(response)
+```
+
+**Advanced Usage**
+
+```python
+from humiris-ai import AdvancedMoAi, MessageType, AdvancedPayload
+
+# Initialize the MoAi with your API key
+moai = AdvancedMoAi(api_key='your_api_key')
+
+# Create a payload for the AI service
+messages = [
+    MessageType(role='system', content='You are a helpful assistant that answers questions about technology.'),
+    MessageType(role='user', content='What is the diference between a microprocessor and a central processing unit?')
+]
+
+payload = AdvancedPayload(
+    advanced_mix_tuning_id='exampleId',
+    messages=messages,
+    temperature=0.7,
+    max_tokens=150
+)
+
+# Call the AI service
+response = moai.use_advanced_mixtuning(payload)
+print(response)
+```
+
+**Support**
+For any questions or issues, please contact Hilario Houmey at h.hilario@humiris.ai.

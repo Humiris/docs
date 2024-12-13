@@ -42,8 +42,14 @@
       "group": "Get Started",
       "pages": [
         "Welcome",
-        "quickstart",
-        "development"
+        "quickstart"
+      ]
+    },
+       {
+      "group": "For developers",
+      "pages": [
+        "Nodejs",
+        "Python"
       ]
     },
     {
