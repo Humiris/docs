@@ -49,13 +49,8 @@
       "group": "For developers",
       "pages": [
         "Nodejs",
-        "Python"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
+        "Python",
+        "OpenAiCompatible"
       ]
     }
   ],
