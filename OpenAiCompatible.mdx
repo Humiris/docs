@@ -9,7 +9,7 @@ description: "Welcome to the **OpenAI-Compatible API** documentation. This guide
 
 Two headers are required for authentication:
 
-1. **`apiKey`**
+1. **`apikey`**
 
    * Description: Your unique API key to access the endpoint. This key is specific to your organization or project and can be found in your Humiris dashboard [Here](https://platform.humiris.ai/api-key).
 
@@ -35,7 +35,7 @@ Use this endpoint to send a chat completion request. This is similar to OpenAI's
 
 | Header        | Type     | Required | Description                                     |
 | ------------- | -------- | -------- | ----------------------------------------------- |
-| `apiKey`      | `string` | Yes      | Your API key.                                   |
+| `apikey`      | `string` | Yes      | Your API key.                                   |
 | `mixTuningId` | `string` | Yes      | The MixTuning ID for personalized AI responses. |
 
 ### Body
@@ -93,7 +93,7 @@ Error
 | ----------- | ------------------- | ---------------------------------------- |
 | `400`       | `BadRequest`        | The mixTuningId header is missing.       |
 | `404`       | `MixTuningNotFound` | The provided mixTuningId does not exist. |
-| `401`       | `Unauthorized`      | Invalid or missing apiKey.               |
+| `401`       | `Unauthorized`      | Invalid or missing apikey.               |
 
 ## Integration Examples
 
@@ -103,7 +103,7 @@ Here’s how to integrate the API using the fetch method in JavaScript:
 ```typescript
 const fetch = require("node-fetch");
 
-const apiKey = "your-api-key";
+const apikey = "your-api-key";
 const mixTuningId = "your-mix-tuning-id";
 
 async function sendChatCompletion() {
@@ -113,7 +113,7 @@ async function sendChatCompletion() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        apiKey: apiKey,
+        apikey: apikey,
         mixTuningId: mixTuningId,
       },
       body: JSON.stringify({
@@ -150,7 +150,7 @@ import requests
 url = "https://moai-service-app.humiris.ai/api/v1/chat/completions"
 headers = {
     "Content-Type": "application/json",
-    "apiKey": "your-api-key",
+    "apikey": "your-api-key",
     "mixTuningId": "your-mix-tuning-id"
 }
 payload = {
