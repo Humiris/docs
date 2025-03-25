@@ -39,12 +39,12 @@
   ],
   "navigation": [
     {
-      "group": "Hmodels platform",
-      "pages": ["Hmodel-OpenAiCompatibility", "Hmodels"]
-    },
-    {
       "group": "Get Started",
       "pages": ["Welcome", "quickstart"]
+    },
+    {
+      "group": "Hmodels platform",
+      "pages": ["Hmodel-OpenAiCompatibility", "Hmodels"]
     },
     {
       "group": "Mixture of AI",
