@@ -1,0 +1,141 @@
+---
+title: Hmodels OpenAi Compatibility
+description: Integration guide for Hmodel OpenAi Compatibility with Python and JavaScript.
+---
+
+# Introduction
+
+Our platform allows you to integrate our [Hmodels](https://docs.humiris.ai/Hmodels) (**baby1**, **daddy1**, **mommy1**) into your projects using OpenAi Compatibility. You can interact with these models using the official `openai` package.
+
+## Generate an API Key
+
+Before you start, you need to generate an API key from our platform. To do so, visit:
+
+👉 [Generate an API Key](https://console.humiris.ai/api-keys)
+
+## Base URL
+
+All requests must be sent to:
+
+```
+https://api.humiris.ai/api/openai/v1
+```
+
+## Installing the OpenAI Package
+
+If you haven't installed it yet, add the OpenAI package to your project:
+
+**Python:**
+
+```bash
+pip install openai
+```
+
+**JavaScript (Node.js):**
+
+```bash
+npm install openai
+```
+
+---
+
+# Using OpenAi Compatibility
+
+## Sending a Request to a Model
+
+Here is an example of how to interact with the **baby1 basic** model using Python and JavaScript.
+Find an verview of all available AI models on Hmodels here 👉 [Hmodels](https://docs.humiris.ai/Hmodels).
+
+```python
+# Python Example
+import openai
+
+openai.api_key = "your_api_key"
+openai.api_base = "https://api.humiris.ai/api/openai/v1"
+
+response = openai.ChatCompletion.create(
+    model="baby1",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain the theory of relativity."}
+    ]
+)
+
+print(response["choices"][0]["message"]["content"])
+```
+
+```javascript
+// JavaScript Example
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "your_api_key",
+  baseURL: "https://api.humiris.ai/api/openai/v1",
+});
+
+async function run() {
+  const response = await openai.chat.completions.create({
+    model: "baby1",
+    messages: [
+      { role: "system", content: "You are a helpful assistant." },
+      { role: "user", content: "Explain the theory of relativity." },
+    ],
+  });
+  console.log(response.choices[0].message.content);
+}
+run();
+```
+
+---
+
+## Other Useful Parameters
+
+The API supports several options to customize the model's responses.
+
+| Parameter     | Description                                                            |
+| ------------- | ---------------------------------------------------------------------- |
+| `model`       | Name of the model used (`Baby1` or `Daddy1`).                          |
+| `messages`    | List of messages to structure the conversation.                        |
+| `temperature` | Controls response creativity (0 = deterministic, 1 = highly creative). |
+| `max_tokens`  | Maximum number of tokens in the response.                              |
+
+**Example with Advanced Parameters:**
+
+```python
+# Python Example
+import os
+import openai
+
+openai.api_key = "your_api_key"
+openai.api_base = "https://api.humiris.ai/api/openai/v1"
+response = client.ChatCompletion.create(
+    model="baby1",
+    messages=[
+        {"role": "system", "content": "You are an expert in quantum physics."},
+        {"role": "user", "content": "Explain the tunnel effect."}
+    ],
+    temperature=0.7,
+    max_tokens=200
+)
+```
+
+```javascript
+// JavaScript Example
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "your_api_key",
+  baseURL: "https://api.humiris.ai/api/openai/v1",
+});
+const response = await client.chat.completions.create({
+  model: "baby1",
+  messages: [
+    { role: "system", content: "You are an expert in quantum physics." },
+    { role: "user", content: "Explain the tunnel effect." },
+  ],
+  temperature: 0.7,
+  max_tokens: 200,
+});
+```
+
+---

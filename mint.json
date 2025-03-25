@@ -40,18 +40,15 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
-        "Welcome",
-        "quickstart"
-      ]
+      "pages": ["Welcome", "quickstart"]
     },
-       {
+    {
       "group": "For developers",
-      "pages": [
-        "Nodejs",
-        "Python",
-        "OpenAiCompatible"
-      ]
+      "pages": ["Nodejs", "Python", "OpenAiCompatible"]
+    },
+    {
+      "group": "Hmodels platform",
+      "pages": ["Hmodel-OpenAiCompatibility", "Hmodels"]
     }
   ],
   "footerSocials": {
