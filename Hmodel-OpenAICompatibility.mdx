@@ -1,11 +1,11 @@
 ---
-title: Hmodels OpenAi Compatibility
-description: Integration guide for Hmodel OpenAi Compatibility with Python and JavaScript.
+title: "Hmodels OpenAI Compatibility"
+description: "Integration guide for Hmodel OpenAI Compatibility with Python and JavaScript."
 ---
 
 # Introduction
 
-Our platform allows you to integrate our [Hmodels](https://docs.humiris.ai/Hmodels) (**baby1**, **daddy1**, **mommy1**) into your projects using OpenAi Compatibility. You can interact with these models using the official `openai` package.
+Our platform allows you to integrate our [Hmodels](https://docs.humiris.ai/Hmodels) (**baby1**, **daddy1**, **mommy1**) into your projects using OpenAI Compatibility. You can interact with these models using the official `openai` package.
 
 ## Generate an API Key
 
@@ -39,7 +39,7 @@ npm install openai
 
 ---
 
-# Using OpenAi Compatibility
+# Using OpenAI Compatibility
 
 ## Sending a Request to a Model
 
@@ -75,7 +75,7 @@ const openai = new OpenAI({
 
 async function run() {
   const response = await openai.chat.completions.create({
-    model: "baby1",
+    model: "daddy1",
     messages: [
       { role: "system", content: "You are a helpful assistant." },
       { role: "user", content: "Explain the theory of relativity." },
@@ -94,7 +94,7 @@ The API supports several options to customize the model's responses.
 
 | Parameter     | Description                                                            |
 | ------------- | ---------------------------------------------------------------------- |
-| `model`       | Name of the model used (`baby1` or `daddy1`).                          |
+| `model`       | Name of the model used (`daddy1` or `daddy1-adv`).                     |
 | `messages`    | List of messages to structure the conversation.                        |
 | `temperature` | Controls response creativity (0 = deterministic, 1 = highly creative). |
 | `max_tokens`  | Maximum number of tokens in the response.                              |
@@ -108,8 +108,8 @@ import openai
 
 openai.api_key = "your_api_key"
 openai.api_base = "https://api.humiris.ai/api/openai/v1"
-response = client.ChatCompletion.create(
-    model="baby1",
+response = openai.ChatCompletion.create(
+    model="daddy1",
     messages=[
         {"role": "system", "content": "You are an expert in quantum physics."},
         {"role": "user", "content": "Explain the tunnel effect."}
@@ -127,8 +127,8 @@ const openai = new OpenAI({
   apiKey: "your_api_key",
   baseURL: "https://api.humiris.ai/api/openai/v1",
 });
-const response = await client.chat.completions.create({
-  model: "baby1",
+const response = await openai.chat.completions.create({
+  model: "daddy1",
   messages: [
     { role: "system", content: "You are an expert in quantum physics." },
     { role: "user", content: "Explain the tunnel effect." },
