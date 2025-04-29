@@ -44,7 +44,7 @@
     },
     {
       "group": "Hmodels platform",
-      "pages": ["Hmodel-OpenAiCompatibility", "Hmodels"]
+      "pages": ["Hmodel-OpenAICompatibility", "Hmodels"]
     },
     {
       "group": "Mixture of AI",
