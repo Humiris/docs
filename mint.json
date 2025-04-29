@@ -48,7 +48,7 @@
     },
     {
       "group": "Mixture of AI",
-      "pages": [, "quickstart","Nodejs", "Python", "OpenAiCompatible"]
+      "pages": ["quickstart","Nodejs", "Python", "OpenAiCompatible"]
     }
   ],
   "footerSocials": {
