@@ -42,7 +42,6 @@
       "group": "Get Started",
       "pages": ["Welcome"]
     },
-    
     {
       "group": "Hmodels platform",
       "pages": ["Hmodel-OpenAiCompatible", "Hmodels"]
