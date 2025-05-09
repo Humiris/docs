@@ -42,9 +42,14 @@
       "group": "Get Started",
       "pages": ["Welcome"]
     },
+    
     {
       "group": "Hmodels platform",
-      "pages": ["Hmodel-OpenAICompatibility", "Hmodels"]
+      "pages": ["Hmodel-OpenAiCompatible", "Hmodels"]
+    },
+    {
+      "group": "Integration",
+      "pages": ["Cursor","Cline"]
     },
     {
       "group": "Mixture of AI",
